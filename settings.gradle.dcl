@@ -6,7 +6,7 @@ pluginManagement {
 }
 
 plugins {
-    id("org.gradle.experimental.kmp-ecosystem").version("0.1.40")
+//    id("org.gradle.experimental.kmp-ecosystem").version("0.1.40")
 }
 
 dependencyResolutionManagement {
@@ -15,39 +15,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "example-kotlin-jvm-app"
-
 include("app")
 include("list")
 include("utilities")
-
-defaults {
-    kotlinJvmApplication {
-        javaVersion = 21
-
-        dependencies {
-            implementation("org.apache.commons:commons-text:1.11.0")
-        }
-
-        testing {
-            dependencies {
-                implementation("org.junit.jupiter:junit-jupiter:5.10.2")
-                runtimeOnly("org.junit.platform:junit-platform-launcher")
-            }
-        }
-    }
-
-    kotlinJvmLibrary {
-        javaVersion = 21
-
-        dependencies {
-            implementation("org.apache.commons:commons-text:1.11.0")
-        }
-        testing {
-            dependencies {
-                implementation("org.junit.jupiter:junit-jupiter:5.10.2")
-                runtimeOnly("org.junit.platform:junit-platform-launcher")
-            }
-        }
-    }
-}
